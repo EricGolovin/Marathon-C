@@ -1,0 +1,3 @@
+klist 
+kinit egolovin @KH.UNITFACTORY.UA
+kdestroy -A

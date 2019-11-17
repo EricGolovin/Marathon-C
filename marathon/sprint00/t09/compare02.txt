@@ -1,0 +1,19 @@
+Some code that was written 
+in th1s files
+to test
+my cde
+DIFFER
+*** compare01.txt	2019-11-11 18:42:18.000000000 +0200
+--- compare02.txt	2019-11-11 18:52:24.000000000 +0200
+***************
+*** 1,4 ****
+  Some code that was written 
+! in this files
+! to t3st
+! my code
+--- 1,5 ----
+  Some code that was written 
+! in th1s files
+! to test
+! my cde
+! DIFFER
