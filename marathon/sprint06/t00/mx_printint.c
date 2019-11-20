@@ -2,8 +2,6 @@
 #include "mx_printchar.c"
 
 void mx_printint(int n) {
-	void mx_printchar(int c);
-	
 	int num = n;
 	int number;
 	int index = 0;
@@ -28,7 +26,7 @@ void mx_printint(int n) {
         }
 
 	for (i = index - 1; i >= 0; --i) {
-		mx_printchar(array[i]);
+		mx_printchar(array[i] + '0');
 	}
 }
 

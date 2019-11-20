@@ -2,7 +2,13 @@
 #include "mx_printchar.c"
 
 void mx_printint(int n) {
-	int num = n;
+	int check = n;
+	int negChecker = 0;
+	if (check < 0) {
+		negChecker = 1;
+		check = -check;
+	}
+	int num = check;
 	int number;
 	int index = 0;
 
@@ -13,7 +19,7 @@ void mx_printint(int n) {
 		num /= 10;
         }
 
-	num = n;
+	num = check;
 	int array[index];
 	int i = 0;
 
@@ -24,9 +30,14 @@ void mx_printint(int n) {
 		i++;
                 num /= 10;
         }
+	
+	if (negChecker) {
+		negChecker = 0;
+		write(1, "-", 1);
+	}
 
-	for (i = index - 1; i >= 0; --i) {
-		mx_printchar(array[i]);
+	for (i = index - 1; i >= 0; --i) { 
+		mx_printchar(array[i] + '0');
 	}
 }
 

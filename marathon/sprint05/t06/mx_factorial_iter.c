@@ -1,5 +1,4 @@
 #include <unistd.h>
-#include <stdio.h>
 
 int mx_factorial_iter(int n) {
 	int num = 1;
@@ -17,8 +16,3 @@ int mx_factorial_iter(int n) {
 	return num;	
 }
 
-int main() {
-	printf("%i\n", mx_factorial_iter(2));
-	printf("%i\n", mx_factorial_iter(5));
-	return 0;
-}
