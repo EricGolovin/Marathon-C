@@ -15,16 +15,15 @@ int mx_atoi(const char *str) {
     	if (((int) str[i]) <= 99) {
     		if (mx_isspace(str[i])) {
     			number = number * 10 + 32;
-    		} else {
-                number = number * 10 + ((int) str[i]);
-            }
+    		}
+    		number = number * 10 + ((int) str[i]);
     	} else if (((int) str[i]) >= 100) {
-    		number = number * 1000 + ((int) str[i]);
+    		number = number * 100 + ((int) str[i]);
     	} 
+        
         i++;
     } 
 
     return number;
 }
-
 
