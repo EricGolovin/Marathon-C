@@ -1,6 +1,4 @@
-#include <unistd.h>
-
-void mx_printchar();
+#include "header.h"
 
 void mx_printint(int n) {
 	int num = n;

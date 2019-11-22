@@ -1,4 +1,4 @@
-#include "header.h"
+#include "only_smiths.h"
 
 int mx_strcmp(const char *s1, const char *s2) {
 	while (*s1 != '\0') {

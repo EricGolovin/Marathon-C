@@ -4,8 +4,17 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdbool.h>
+
+#include "mx_atoi.c"
+#include "mx_isdigit.c"
+#include "mx_isspace.c"
+#include "mx_printchar.c"
+#include "mx_printint.c"
 #include "mx_printstr.c"
+#include "mx_strcmp.c"
+#include "mx_strcpy.c"
 #include "mx_strlen.c"
+
 int mx_atoi(const char *str);
 bool mx_isdigit(int c);
 bool mx_isspace(char c);

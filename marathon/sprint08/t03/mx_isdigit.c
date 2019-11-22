@@ -1,4 +1,4 @@
-#include "header.h"
+#include "hex_to_nbr.h"
 
 bool mx_isdigit(int c) {
 	for (int i = '0'; i <= '9'; ++i) {
