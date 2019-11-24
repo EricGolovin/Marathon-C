@@ -1,9 +1,8 @@
+#include "header.h"
 
 bool mx_isdigit(int c) {
-	for (int i = '0'; i <= '9'; ++i) {
-		if (c == i) {
-			return 1;
-		}
-	}
-	return 0;
+    if(c >= 48 && c <= 57) {
+        return true;
+    }
+    return false;
 }

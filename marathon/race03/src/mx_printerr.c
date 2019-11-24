@@ -1,10 +1,5 @@
-#include "printerr.h"
+#include "header.h"
 
 void mx_printerr(const char *s) {
     write(2, s, mx_strlen(s));
-}
-
-int main() {
-	mx_printerr("s");
-	return 0;
 }

@@ -1,35 +1,69 @@
-#include <unistd.h>
+#include "../inc/header.h"
 
-int main(int argc, char const *argv[]) {
-  int operand1TenCounter = 0;
-  int operand2TenCounter = 0;
-  int resultTenCounter = 0;
-  char operation = NULL;
-  int nineInterations = 0;
+int checkForTenth(char *array) {
+	int counter = 0;
+	char question = '?';
 
-  for (int i = 0; argv[1][i] != '\0'; i++) {
-      if (argv[1][i] == '?') {
-        operand1TenCounter += 1;
-      }
-  }
+	for (int i = 0; array[i] != '\0'; i++) {
+		if (array[i] == question) {
+			counter += 1;
+		}
+	}
 
-  for (int i = 0; argv[3][i] != '\0'; i++) {
-      if (argv[3][i] == '?') {
-        operand2TenCounter += 1;
-      }
-  }
+	return counter;
+}
 
-  for (int i = 0; argv[4][i] != '\0'; i++) {
-      if (argv[4][i] == '?') {
-        resultTenCounter += 1;
-      }
-  }
+char checkForOperation(char *array) {
+	char dstOpr = ' ';
 
-  for (int i = 0; argc[2][i] != '\0'; i++) {
-    if (argc[2][i] == '+' || argc[2][i] == '-' || argc[2][i] == '*' || argc[2][i] == '/') {
-      operation = argc[2][i];
-    }
-  }
+	for (int i = 0; array[i] != '\0'; i++) {
+		switch (array[i]) {
+			case '+':
+			case '-':
+			case '*':
+			case '/':
+			dstOpr = array[i];
+			break;
+			default:
+			break;
+		}
+	}
 
-  return 0;
+	if (dstOpr == ' ') {
+		return ' ';
+	}
+
+	return dstOpr;
+}
+
+
+int main(int argc, char *argv[])
+{
+	argc++;
+	argc--;
+	int questionOp1 = checkForTenth(argv[1]);
+	int questionOp2 = checkForTenth(argv[3]);
+	int questionRes = checkForTenth(argv[4]);
+
+	int valueOp1 = 0;
+	int valueOp2 = 0;
+	int valueResult = 0;
+
+	char operation = ' ';
+
+	if (questionOp1 == 0) {
+		valueOp1 = mx_atoi(argv[1]);
+	}
+	if (questionOp2 == 0) {
+		valueOp2 = mx_atoi(argv[3]);
+	}
+	if (questionRes == 0) {
+		valueResult = mx_atoi(argv[4]);
+	}
+
+	operation = checkForOperation(argv[2]);
+
+	mx_findResult(valueOp1, valueOp2, operation, questionRes);
+	
+	return 0;
 }
