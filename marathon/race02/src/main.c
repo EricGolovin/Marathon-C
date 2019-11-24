@@ -5,6 +5,7 @@ int main(int argc, char const *argv[]) {
   int operand2TenCounter = 0;
   int resultTenCounter = 0;
   char operation = NULL;
+  int nineInterations = 0;
 
   for (int i = 0; argv[1][i] != '\0'; i++) {
       if (argv[1][i] == '?') {
