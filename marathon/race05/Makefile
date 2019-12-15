@@ -1,7 +1,5 @@
-NAME = matrix_rain
-
-SRCS = src/get_random_num.c src/mx_kbhit.c src/matrix.c src/prob.c src/main.c
-SRCSOB = get_random_num.c mx_kbhit.c matrix.c prob.c main.c
+SRCS = src/get_random_num.c src/matrix.c src/prob.c src/main.c
+SRCSOB = get_random_num.c matrix.c prob.c main.c
 
 INC = inc/matrix.h
 INCOB = matrix.h
@@ -12,7 +10,7 @@ all: install clean
 install:
 	@cp $(SRCS) .
 	@cp $(INC) .
-	@clang $(CFLAGS) -o $(NAME) $(SRCSOB) -I $(INCOB)
+	@clang -o matrix_rain $(SRCSOB) -lncurses 
 uninstall: clean
 	@rm -rf $(NAME)
 clean:

@@ -13,8 +13,8 @@ void matrix(WINDOW *mainwin) {
 	cols = malloc(sizeof(struct column) * c / 2);
 	memset(cols, 0, sizeof(struct column) * c / 2);
 
-
-	while (!kbhit()) {
+	nodelay(stdscr, TRUE);
+	while (1) {
 		wclear(mainwin);
 		for(i = 0; i < c/2; i++) {
 			int flag;
@@ -62,6 +62,8 @@ void matrix(WINDOW *mainwin) {
 		}
 		refresh();
 		usleep(100000);
-
+		if (getch() == 'q') {
+			break;
+		}
 	}
 }

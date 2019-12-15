@@ -13,7 +13,6 @@ struct column {
 
 int prob(int percentage);
 char get_random_num();
-int kbhit(void);
 void matrix(WINDOW *mainwin);
 
 #endif
